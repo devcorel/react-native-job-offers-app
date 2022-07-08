@@ -4,16 +4,19 @@ export interface ICompany {
    id: string;
    name: string;
    jobOffers: number;
+   imageUrl: string;
 }
 
-export class Company {
-   id = '';
-   name = '';
-   jobOffers = 0;
+export class Company implements ICompany {
+   id;
+   name;
+   jobOffers;
+   imageUrl;
 
-   constructor(name: string, jobOffers: number) {
+   constructor(name: string, jobOffers: number, imageUrl: string) {
       this.id = generateId();
       this.name = name;
       this.jobOffers = jobOffers;
+      this.imageUrl = imageUrl;
    }
 }

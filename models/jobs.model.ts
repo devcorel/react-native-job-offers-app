@@ -1,6 +1,8 @@
 import generateId from '../utils/generateId';
 
-interface IJob {
+export type TJobType = 'Remote' | 'Mix' | 'Face-to-face';
+
+export interface IJob {
    id: string;
    companyId: string;
    name: string;
@@ -8,21 +10,21 @@ interface IJob {
    salary: number;
    currency: string;
    vacancies: number;
-   type: 'Remote' | 'Mix' | 'Face-to-face';
+   type: TJobType;
    publishDate: number;
    // esquema: freelance: nominal, honorarios, temporal
 }
 
-export class Job {
-   id = '';
-   companyId = '';
-   name = '';
-   description = '';
-   salary = 0;
-   currency = '';
-   vacancies = 0;
-   type = 'remote';
-   publishDate = 0;
+export class Job implements IJob {
+   id;
+   companyId;
+   name;
+   description;
+   salary;
+   currency;
+   vacancies;
+   type;
+   publishDate;
 
    constructor(
       companyId: string,
@@ -31,7 +33,7 @@ export class Job {
       salary: number,
       currency: string,
       vacancies: number,
-      type: string,
+      type: TJobType,
       publishDate: number
    ) {
       this.id = generateId();

@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { JobList } from './components/containers/JobList';
+import { MainLayout } from './layouts/MainLayout';
 
 export default function App() {
    return (
       <View style={styles.container}>
-         <JobList />
+         <MainLayout />
          <StatusBar style="auto" />
       </View>
    );
